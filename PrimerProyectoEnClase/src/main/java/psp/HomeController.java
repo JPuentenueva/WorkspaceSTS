@@ -1,0 +1,23 @@
+package psp;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/home")
+public class HomeController {
+	
+	@GetMapping("/hola")
+	public String saluda(Model model){
+		
+		model.addAttribute("saludo", "Hola cabesa");
+		model.addAttribute("mensaje", "Pues mira te queria decir que esto es un mensaje");
+		model.addAttribute("url", "http://www.salesianos-triana.com");
+		
+		return "hola"; //Esto invoca al hola.jsp
+		
+	}
+
+}

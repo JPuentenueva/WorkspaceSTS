@@ -1,0 +1,5 @@
+package psp.pojo;
+
+public class User {
+
+}

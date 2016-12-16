@@ -1,0 +1,37 @@
+package psp.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import psp.pojo.User;
+
+@Controller
+@RequestMapping("/home")
+public class LoginController {
+	
+	@PostMapping("/login")
+	public String loguear(Model model){
+		
+		model.addAttribute("saludo", "Hola cabesa");
+		model.addAttribute("mensaje", "Pues mira te queria decir que esto es un mensaje");
+		model.addAttribute("url", "http://www.salesianos-triana.com");
+		
+		return "form"; //Esto invoca al form.jsp
+		
+	}
+	
+	@GetMapping("/usuario")
+	public String mostrarDatos(@ModelAttribute("usuarioForm") User user ,Model model){
+		
+		model.addAttribute("usuario", );
+		model.addAttribute("mensaje", "Pues mira te queria decir que esto es un mensaje");
+		model.addAttribute("url", "http://www.salesianos-triana.com");
+		
+		return "form"; //Esto invoca al form.jsp
+		
+	}
+}

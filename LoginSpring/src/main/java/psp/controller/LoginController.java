@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import psp.pojo.User;
+import psp.repositorio.RepositorioUsuarios;
 
 @Controller
 @RequestMapping("/home")
 public class LoginController {
 	
-	@GetMapping("/login")
+	RepositorioUsuarios bd;
+	
+	@GetMapping("/newUser")
 	public String loguear( Model model){
 		User user = new User();
 		model.addAttribute("usuario", user );
@@ -22,10 +25,19 @@ public class LoginController {
 		
 	}
 	
-	@PostMapping("/user")
-	public String mostrarDatos(@ModelAttribute("usuario")User user , Model model){
+	@PostMapping("/addUser")
+	public String anyadirUsuario(@ModelAttribute("usuario")User user , Model model){
 		
-		model.addAttribute("nombreUsuario", user.getNombreUsuario());
+		bd.save(user);
+		
+		return "redirect:/list"; //Esto invoca al view.jsp
+		
+	}
+	
+	@PostMapping("/list")
+	public String mostrarUsuarios(Model model){
+		
+		model.addAttribute("listaUsuarios", bd.findAll());
 		
 		return "view"; //Esto invoca al view.jsp
 		

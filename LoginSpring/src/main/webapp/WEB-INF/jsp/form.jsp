@@ -28,7 +28,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form:form method="POST" action="mostrarDatos" modelAttribute="usuario" class="form-horizontal">
+					<form:form method="POST" action="anyadirUsuario" modelAttribute="usuario" class="form-horizontal">
 
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
@@ -66,7 +66,7 @@
 						<div class="login-register">
 				            <a href="index.php">Login</a>
 				         </div>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>

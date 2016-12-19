@@ -1,0 +1,7 @@
+package psp.repositorio;
+
+import psp.pojo.User;
+
+public class RepositorioUsuarios extends JpaRepository<User,String>{
+	
+}

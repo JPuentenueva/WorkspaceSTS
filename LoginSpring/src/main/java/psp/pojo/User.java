@@ -1,7 +1,25 @@
 package psp.pojo;
 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table  (name = "USUARIO")
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id_usuario")
+	int id;
+	@Column(name="nombre_usuario")
 	String nombreUsuario;
+	@Column(name="contrasenya")
 	String contrasenya;
 	
 	public User() {

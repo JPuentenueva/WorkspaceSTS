@@ -1,0 +1,59 @@
+package psp.pojo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table (name = "USUARIO")
+public class Usuario {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id_usuario")
+	int id;
+	@Column(name="nombre_usuario")
+	String nombreUsuario;
+	@Column(name="contrasenya_usuario")
+	String contrasenya;
+	
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(String nombreUsuario, String contrasenya) {
+		super();
+		this.nombreUsuario = nombreUsuario;
+		this.contrasenya = contrasenya;
+	}
+
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+	public String getContrasenya() {
+		return contrasenya;
+	}
+
+	public void setContrasenya(String contrasenya) {
+		this.contrasenya = contrasenya;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	
+}

@@ -1,0 +1,9 @@
+package psp.repositorio;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import psp.pojo.Usuario;
+
+public interface RepositorioUsuarios extends JpaRepository<Usuario,String> {
+	
+}
